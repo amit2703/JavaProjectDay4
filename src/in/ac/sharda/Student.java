@@ -1,6 +1,6 @@
 package in.ac.sharda;
 
-public class Student {
+public class Student implements IResultArrivedListener {
 
 	private final int rollnumber;
 	private final String name;
@@ -14,7 +14,7 @@ public class Student {
 	public Student(int rn, String n, String email) {
 		this.rollnumber = rn;
 		this.name = n;
-		this.email = email;
+																																																																																																																																																									this.email = email;
 	}
 
 	public void attendance() {
@@ -36,7 +36,7 @@ public class Student {
 	public String getName() {
 		return name;
 	}
-
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Student) {
@@ -45,6 +45,12 @@ public class Student {
 		}
 
 		return false;
+	}
+
+	@Override
+	public void resultArrived() {
+		System.out.println("Hey result is out, Go check it!"+name);
+		
 	}
 
 }
